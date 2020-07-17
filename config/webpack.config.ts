@@ -6,11 +6,14 @@ import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 import HardSourceWebpackPlugin from 'hard-source-webpack-plugin'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import SizePlugin from 'size-plugin'
+import TerserPlugin from 'terser-webpack-plugin'
 
 import { PROJECT_NAME, PROJECT_ROOT } from '../constants/env'
 import { tsWorkerPool } from '../constants/worker-pool'
 
 const configuration: Configuration = {
+  devtool: 'source-map',
+  mode: 'production',
   entry: resolve(PROJECT_ROOT, 'src', 'index.ts'),
   context: resolve(PROJECT_ROOT),
   output: {
@@ -42,7 +45,7 @@ const configuration: Configuration = {
     ],
   },
   plugins: [
-    new WebpackBar(),
+    new WebpackBar({ name: 'typescript-lib-template', color: '#c3002f' }),
     new BannerPlugin({
       raw: true,
       banner: `/** @preserve Powered by ${PROJECT_NAME} (https://github.com/LaamGinghong/typescript-lib-template) */`,
@@ -58,6 +61,10 @@ const configuration: Configuration = {
     new CleanWebpackPlugin(),
     new HardSourceWebpackPlugin({ info: { mode: 'none', level: 'warn' } }),
   ],
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin({ extractComments: false })],
+  },
 }
 
 export default configuration
