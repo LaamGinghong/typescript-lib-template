@@ -2,7 +2,6 @@ import { BannerPlugin, Configuration } from 'webpack'
 import { resolve } from 'path'
 import WebpackBar from 'webpackbar'
 import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin'
-import HardSourceWebpackPlugin from 'hard-source-webpack-plugin'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import SizePlugin from 'size-plugin'
 import TerserPlugin from 'terser-webpack-plugin'
@@ -48,7 +47,6 @@ const configuration: Configuration = {
     new FriendlyErrorsWebpackPlugin(),
     new SizePlugin({ writeFile: false }),
     new CleanWebpackPlugin(),
-    new HardSourceWebpackPlugin({ info: { mode: 'none', level: 'warn' } }),
   ],
   optimization: {
     minimize: true,

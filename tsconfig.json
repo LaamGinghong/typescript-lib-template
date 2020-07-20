@@ -4,6 +4,7 @@
     "module": "CommonJS",
     "lib": ["DOM", "ESNext"],
     "declaration": true,
+    "declarationDir": "./lib",
     "sourceMap": true,
     "isolatedModules": true,
     "strict": true,
@@ -20,6 +21,7 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "pretty": true
   }
 }
