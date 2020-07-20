@@ -8,7 +8,6 @@
     "isolatedModules": true,
     "strict": true,
     "alwaysStrict": true,
-
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,

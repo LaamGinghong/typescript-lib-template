@@ -6,8 +6,8 @@
   "author": "laamginghong",
   "license": "MIT",
   "scripts": {
-    "build": "ts-node --files -P tsconfig.json scripts/build.ts",
-    "analyze": "ts-node --files -P tsconfig.json scripts/analyze.ts"
+    "build": "ts-node --files -P ./tsconfig.json scripts/build.ts",
+    "analyze": "ts-node --files -P ./tsconfig.json scripts/analyze.ts"
   },
   "husky": {
     "hooks": {

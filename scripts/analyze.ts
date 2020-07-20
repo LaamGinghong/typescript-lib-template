@@ -2,7 +2,7 @@ import webpack, { Stats } from 'webpack'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import { merge } from 'webpack-merge'
 
-import configuration from '../config/webpack.config'
+import configuration from './config/webpack.config'
 
 const analysisConfiguration = merge(configuration, {
   plugins: [new BundleAnalyzerPlugin()],
